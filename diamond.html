@@ -1,27 +1,122 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style1.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-
-  <title>konfirmasi</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <title>Konfirmasi</title>
+  <style>
+    .belakang {
+      text-align: center;
+      padding: 20px;
+      font-family: 'Rubik', sans-serif;
+    }
+    .enter button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .enter span {
+      font-size: 24px;
+      margin: 0 20px;
+    }
+    .tombol {
+      padding: 10px 20px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Rubik', sans-serif;
+    }
+    .tombol:hover {
+      background: #218838;
+    }
+    /* Styling untuk alert kustom */
+    .alert {
+      display: none;
+      background-color: #ffe6e6;
+      color: red;
+      padding: 10px;
+      border: 2px solid red;
+      border-radius: 5px;
+      margin: 10px auto;
+      max-width: 300px;
+      text-align: center;
+      font-family: 'Rubik', sans-serif;
+    }
+  </style>
 </head>
-
 <body>
-  <div>
+  <div class="belakang">
     <h4>Konfirmasi</h4>
-    <h3>Berapa diamond yang kamu inginkan?</h3>
+    <h3>Berapa diamond yang kamu inginkan? 💎💎💎💎</h3>
     <div class="enter">
-      <button>-</button>
-      <ba></ba>
-      <button>+</button>
+      <button id="minus" onclick="kur()">-</button>
+      <span id="jumlah">0</span>
+      <button id="plus" onclick="tam()">+</button>
+    </div>
+    <br><br>
+    <button type="button" class="tombol" onclick="err()">
+      <span class="tombol1">SELESAI</span>
+    </button>
+    <div id="alertBox" class="alert"></div>
+    <footer>
+      <p style="font-size: 12px;">jika ada masalah hub admin
+      <br>0822 3995 7645
+      </p>
+    </footer>
   </div>
-  </div>
-</body>
 
+  <script>
+    let jumlah = document.getElementById('jumlah');
+    let alertBox = document.getElementById('alertBox');
+    let total = 0;
+
+    function tam() {
+      total += 10;
+      if (total > 200) {
+        total = 200;
+        showAlert('Jumlah diamond maksimal 200!');
+      } else {
+        hideAlert();
+      }
+      jumlah.innerHTML = total;
+    }
+
+    function kur() {
+      total -= 10;
+      if (total < 0) {
+        total = 0;
+        showAlert('Jumlah diamond tidak bisa kurang dari 0!');
+      } else {
+        hideAlert();
+      }
+      jumlah.innerHTML = total;
+    }
+
+    function err() {
+      if (total === 0) {
+        showAlert('Pilih jumlah diamond terlebih dahulu!');
+      } else {
+        showAlert(`err`);
+      }
+    }
+
+    function showAlert(message) {
+      alertBox.innerHTML = message;
+      alertBox.style.display = 'block';
+      // Auto-hide setelah 3 detik
+      setTimeout(hideAlert, 3000);
+    }
+
+    function hideAlert() {
+      alertBox.style.display = 'none';
+    }
+  </script>
+</body>
 </html>
