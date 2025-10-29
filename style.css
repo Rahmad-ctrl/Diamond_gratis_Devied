@@ -1,0 +1,134 @@
+html{
+  padding: 0px;
+  margin: 0px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  max-width: 1200px; /* Membatasi lebar maksimum halaman */
+  margin: 0 auto; /* Memusatkan konten */
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.ulang {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.ulang a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.ulang img {
+  width: 30px;
+  margin-right: 8px;
+}
+
+.ulang-text {
+  font-size: 1rem;
+}
+
+.gambar-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Jarak antar gambar */
+  flex-wrap: nowrap; /* Memastikan gambar tetap sejajar (tidak wrap) */
+  margin-bottom: 40px;
+}
+
+.game-item {
+  text-align: center;
+  flex: 0 0 auto; /* Mencegah elemen menyusut atau melebar */
+}
+
+.ml,
+.ff {
+  border: 2px solid #b1b1b1;
+  border-radius: 5px;
+  width: 100px;
+  height: auto ;
+}
+
+.teks-ml,
+.teks-ff {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.copy {
+  font-size: 0.9rem;
+  color: #272727;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .gambar-container {
+    gap: 15px; /* Mengurangi jarak antar gambar di layar kecil */
+  }
+
+  .ml,
+  .ff {
+    width: 160px; /* Mengurangi ukuran gambar di layar kecil */
+  }
+
+  .ulang {
+    position: static;
+    margin: 20px 0;
+    text-align: center;
+  }
+}
+.teks{
+  font-size: 20px;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100px;
+  font-style: normal;
+
+}
+mbg{
+  text-decoration: line-through;
+}
+.merah{
+  border-radius: 10px 10px 10px 10px;
+  background-color: #7B0000;
+  font-weight: bold;
+  font-size: 30px;
+  color: #FF1616;
+  text-decoration: none;
+  padding: 3px 3px 3px 3px;
+}
+.label{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
